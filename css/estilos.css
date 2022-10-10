@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    color: #000000;
+    background: #ffffff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 10px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, auto);
+    gap: 20px;
+    
+    grid-template-areas:
+      "header           header          header"
+      "inicio           inicio          inicio"
+      "queEs            queEs           queEs"
+      "paraQuien        paraQuien       paraQuien"
+      "precios          precios         precios"
+      "habitaciones     habitaciones    habitaciones"
+      "habitaciones     habitaciones    habitaciones"
+      "pregFrecuentes   pregFrecuentes  pregFrecuentes"
+      "contacto         contacto        contacto"
+      "footer           footer          footer";
+  }
+  
+  .header { grid-area: header; }
+  
+
+  .inicio { grid-area: inicio; }
+  
+
+  .queEs { grid-area: queEs; }
+  
+
+  .paraQuien { grid-area: paraQuien; }
+  
+  
+  .precios { grid-area: precios; }
+  
+
+  .habitaciones { grid-area: habitaciones; }
+  
+
+  .pregFrecuentes { grid-area: pregFrecuentes; }
+  
+
+  .contacto { grid-area: contacto; }
+  
+
+  .footer { grid-area: footer; }
+  
+  
