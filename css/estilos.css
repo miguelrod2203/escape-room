@@ -17,17 +17,16 @@ body {
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(10, auto);
+    grid-template-rows: repeat(9, auto);
     gap: 20px;
     
     grid-template-areas:
       "header           header          header"
       "inicio           inicio          inicio"
-      "queEs            queEs           queEs"
-      "paraQuien        paraQuien       paraQuien"
-      "precios          precios         precios"
+      "queEs            queEs           queEs"     
       "habitaciones     habitaciones    habitaciones"
       "habitaciones     habitaciones    habitaciones"
+      "precios          precios         precios"     
       "pregFrecuentes   pregFrecuentes  pregFrecuentes"
       "contacto         contacto        contacto"
       "footer           footer          footer";
@@ -41,14 +40,11 @@ body {
 
   .queEs { grid-area: queEs; }
   
-
-  .paraQuien { grid-area: paraQuien; }
   
-  
-  .precios { grid-area: precios; }
-  
-
   .habitaciones { grid-area: habitaciones; }
+
+  
+  .precios { grid-area: precios; }  
   
 
   .pregFrecuentes { grid-area: pregFrecuentes; }
