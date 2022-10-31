@@ -50,7 +50,7 @@ body {
 
 /*  seccion inicio */
 
-.contenedor .contenido .inicio {
+.contenedor .contenido {
     grid-area: contenido;
 }
 
@@ -111,10 +111,42 @@ body {
     color: #ffffff;
 }
 
-
 /*  seccion habitaciones */
 
-.contenedor .contenido .habitaciones { grid-area: habitaciones; }
+.contenedor .contenido .habitaciones {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+
+}
+
+.contenedor .contenido .habitaciones .rooms {
+    width: 40%;
+    position: relative;
+}
+
+.contenedor .contenido .habitaciones .rooms .room-texto {
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    top: 40%;
+}
+
+.contenedor .contenido .habitaciones .rooms img {
+    width: 100%;
+}
+
+
+
+
+
+
+
 
 /*  seccion precios */
 
