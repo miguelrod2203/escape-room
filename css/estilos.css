@@ -58,7 +58,7 @@ body {
 /*  seccion inicio */
 
 .contenedor .contenido .inicio {
-    grid-area: inicio; 
+    grid-area: inicio;
     padding-top: 50px;
 }
 
@@ -74,8 +74,10 @@ body {
 
 .contenedor .contenido .inicio .banner img {
     width: 100%;
+
 }
 .contenedor .contenido .inicio .banner .textoInicial {
+    color: #fdb713;
     position: absolute;
 }
 
