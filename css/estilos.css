@@ -5,32 +5,25 @@
 }
 
 body {
-    color: #000000;
-    background: #ffffff;
+    color: #ffffff;
+    background-color: #1e1e1e;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /*  contenedor de grid */
 
 .contenedor {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
     margin: 10px auto;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(9, auto);
-    gap: 20px;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-rows: repeat(4, auto);
     
     grid-template-areas:
       "header           header          header"
-      "inicio           inicio          inicio"
-      "queEs            queEs           queEs"     
-      "habitaciones     habitaciones    habitaciones"
-      "habitaciones     habitaciones    habitaciones"
-      "precios          precios         precios"     
-      "pregFrecuentes   pregFrecuentes  pregFrecuentes"
-      "contacto         contacto        contacto"
+      "contenido        contenido       contenido"
+      "aside            aside           aside"
       "footer           footer          footer";
 }
 
@@ -58,13 +51,10 @@ body {
 /*  seccion inicio */
 
 .contenedor .contenido .inicio {
-    grid-area: inicio;
-    padding-top: 50px;
+    grid-area: contenido;
 }
 
 .contenedor .contenido .inicio .banner {
-    background-color: aquamarine;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,32 +69,48 @@ body {
 .contenedor .contenido .inicio .banner .textoInicial {
     color: #fdb713;
     position: absolute;
+    text-align: center;
 }
-
-
-
-
 
 /*  aqui trabaje animacion a los titulos */
 
 .contenedor .contenido .titulos {
     text-align: center;
-    padding-bottom: 10px;
+    padding-top: 80px;
+    padding-bottom: 40px;
     animation-name: efectoTitulos;
-    animation-duration: 10s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
 }
 
 @keyframes efectoTitulos {
-    0%      {color: #000000;}
+    0%      {color: #ffffff;}
     40%     {color: #c8001c;}
     80%     {color: #fdb713;}
     100%    {color: #09b617;}
 }
 
+.contenedor .contenido .titulos p {
+    font-size: 20px;
+}
+
 /*  seccion que es */
 
-.contenedor .contenido .queEs { grid-area: queEs; }
+.contenedor .contenido .queEs {
+    width: 100%;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contenedor .contenido .queEs .pasos {
+    width: 28%;
+    text-align: center;
+    color: #ffffff;
+}
+
 
 /*  seccion habitaciones */
 
@@ -122,8 +128,31 @@ body {
 
 .contenedor .contenido .contacto { grid-area: contacto; }
 
-/*  seccon pie de pagina */
+/*  seccion de aside */
+
+.contenedor .aside { grid-area: aside; }
+
+
+/*  seccion pie de pagina */
 
 .contenedor .footer { grid-area: footer; }
   
-  
+/* medias Querys para pantalla de 768px*/
+
+@media screen and (max-width: 768px) {
+
+
+
+}
+
+/* medias Querys para pantalla de 576px */
+
+@media screen and (max-width: 576px) {
+
+    .contenedor .contenido .queEs .pasos {
+        width: 100%;
+        text-align: center;
+        color: #ffffff;
+    }
+
+}
