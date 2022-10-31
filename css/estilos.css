@@ -10,7 +10,9 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.container {
+/*  contenedor de grid */
+
+.contenedor {
     width: 90%;
     max-width: 1200px;
     margin: 10px auto;
@@ -30,29 +32,96 @@ body {
       "pregFrecuentes   pregFrecuentes  pregFrecuentes"
       "contacto         contacto        contacto"
       "footer           footer          footer";
-  }
-  
-  .header { grid-area: header; }
-  
+}
 
-  .inicio { grid-area: inicio; }
-  
+/*  header */
 
-  .queEs { grid-area: queEs; }
-  
-  
-  .habitaciones { grid-area: habitaciones; }
+.contenedor .header {
+    grid-area: header; 
+    background-image: linear-gradient(to right, white 30%, #000000);
+    border-bottom:1px solid #fdb713;
+}
 
-  
-  .precios { grid-area: precios; }  
-  
+.contenedor .header .navbar-brand img{
+    width: 70px;
+}
 
-  .pregFrecuentes { grid-area: pregFrecuentes; }
-  
+.contenedor .header a {
+    color: #fdb713;
+}
 
-  .contacto { grid-area: contacto; }
-  
+.contenedor .header a:hover {
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #fdb713;
+}
 
-  .footer { grid-area: footer; }
+/*  seccion inicio */
+
+.contenedor .contenido .inicio {
+    grid-area: inicio; 
+    padding-top: 50px;
+}
+
+.contenedor .contenido .inicio .banner {
+    background-color: aquamarine;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.contenedor .contenido .inicio .banner img {
+    width: 100%;
+}
+.contenedor .contenido .inicio .banner .textoInicial {
+    position: absolute;
+}
+
+
+
+
+
+/*  aqui trabaje animacion a los titulos */
+
+.contenedor .contenido .titulos {
+    text-align: center;
+    padding-bottom: 10px;
+    animation-name: efectoTitulos;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes efectoTitulos {
+    0%      {color: #000000;}
+    40%     {color: #c8001c;}
+    80%     {color: #fdb713;}
+    100%    {color: #09b617;}
+}
+
+/*  seccion que es */
+
+.contenedor .contenido .queEs { grid-area: queEs; }
+
+/*  seccion habitaciones */
+
+.contenedor .contenido .habitaciones { grid-area: habitaciones; }
+
+/*  seccion precios */
+
+.contenedor .contenido .precios { grid-area: precios; }  
+
+/*  seccion preguntas frecuentes */
+
+.contenedor .contenido .pregFrecuentes { grid-area: pregFrecuentes; }
+
+/*  seccion contacto */
+
+.contenedor .contenido .contacto { grid-area: contacto; }
+
+/*  seccon pie de pagina */
+
+.contenedor .footer { grid-area: footer; }
   
   
