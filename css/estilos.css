@@ -76,8 +76,8 @@ body {
 
 .contenedor .contenido .titulos {
     text-align: center;
-    padding-top: 80px;
-    padding-bottom: 40px;
+
+    padding: 80px 10px 40px 10px;
     animation-name: efectoTitulos;
     animation-duration: 15s;
     animation-iteration-count: infinite;
@@ -134,19 +134,12 @@ body {
     padding: 10px;
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
-    top: 40%;
+    top: 45%;
 }
 
 .contenedor .contenido .habitaciones .rooms img {
     width: 100%;
 }
-
-
-
-
-
-
-
 
 /*  seccion precios */
 
@@ -185,6 +178,11 @@ body {
         width: 100%;
         text-align: center;
         color: #ffffff;
+        padding: 10px;
+    }
+
+    .contenedor .contenido .habitaciones .rooms {
+        width: 90%;
     }
 
 }
