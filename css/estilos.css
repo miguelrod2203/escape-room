@@ -189,7 +189,65 @@ body {
 
 /*  seccion contacto */
 
-.contenedor .contenido .contacto { grid-area: contacto; }
+.contenedor .contenido .contacto {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.contenedor .contenido .contacto .direccion {
+    padding: 20px;
+}
+.contenedor .contenido .contacto .formulario-contacto {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #fdb713;
+    border-radius: 5px; 
+}
+
+.contenedor .contenido .contacto .formulario-contacto input {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 35px;
+    padding-left: 10px;
+    border: 2px solid #fdb713;
+    border-radius: 5px; 
+}
+
+.contenedor .contenido .contacto .formulario-contacto textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 35px;
+    padding-left: 10px;
+    resize: vertical;
+    max-height: 250px;
+    min-height: 150px;
+    border: 2px solid #fdb713;
+    border-radius: 5px; 
+}
+
+.contenedor .contenido .contacto .formulario-contacto select {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 35px;
+    padding-left: 10px;
+    border: 2px solid #fdb713;
+    border-radius: 5px; 
+}
+
+.contenedor .contenido .contacto .formulario-contacto textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 35px;
+    padding-left: 10px;
+    border: 2px solid #fdb713;
+    border-radius: 5px; 
+}
+.contenedor .contenido .contacto .formulario-contacto .enviar {
+    background-color: #fdb713;
+    color: #ffffff;
+}
+
 
 /*  seccion de aside */
 
