@@ -158,7 +158,34 @@ body {
 
 /*  seccion preguntas frecuentes */
 
-.contenedor .contenido .pregFrecuentes { grid-area: pregFrecuentes; }
+.contenedor .contenido .pregFrecuentes {
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        padding: 0px 40px 0px 40px;
+        flex-grow: 1;
+    
+}
+
+.contenedor .contenido .pregFrecuentes .pregunta {
+    font-weight: bold;
+    font-size: 20px; 
+}
+.contenedor .contenido .pregFrecuentes .respuesta {
+    font-style: italic;
+    padding-bottom: 10px;
+    text-align: justify;
+}
+
+.contenedor .contenido .pregFrecuentes .accordion {
+    --bs-accordion-btn-color: #ffffff;
+    --bs-accordion-color: #ffffff;
+    --bs-accordion-bg: #1e1e1e;
+    --bs-accordion-btn-focus-border-color: #1e1e1e;
+    --bs-accordion-btn-focus-box-shadow: #1e1e1e; 
+    --bs-accordion-active-bg: #1e1e1e;
+    --bs-accordion-active-color: #fdb713;
+}
 
 /*  seccion contacto */
 
