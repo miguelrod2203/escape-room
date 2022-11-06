@@ -29,7 +29,7 @@ const todas_habitaciones = {
 
 function rooms(nombre){
     
-    let room = false;
+    let roomDisponible = false;
 
     do {
         let opcionRoom = prompt(`${nombre} selecciona una de nuestras salas: 
@@ -41,52 +41,53 @@ function rooms(nombre){
         6- Alquimago. 
         `);
 
-        if(opcionRoom in todas_habitaciones){
-            room = todas_habitaciones.hasOwnProperty(opcionRoom);
+        roomDisponible = todas_habitaciones.hasOwnProperty(opcionRoom);
+
+        if(roomDisponible){           
             console.log(opcionRoom = todas_habitaciones[opcionRoom]);
         } else {
             alert(`${nombre}, la habitacion seleccionada no esta habilitada`);
         }  
 
     }
-    while(!room)
-    return room; 
+
+    while(!roomDisponible)
+    return roomDisponible; 
 }
 
 // horarios de mi servicio de entretencion
 
 const habitacionHorario = ["2:00 Pm", "4:00 Pm", "6:00 Pm", "8:00 Pm"];
 
-function horarios(nombre, room){
-    let horario = false;
+function horarios(nombre){
+    
+    let horarioDisponible = false;
 
     do {
-        let opcionHorario = prompt(`${nombre} usted ha elegido la habitacion ${room},
-        ¿en que horario deseas intentarlo ( 1, 2, 3 o 4)?
+        let opcionHorario = prompt(`${nombre} ¿en que horario deseas intentarlo ( 1, 2, 3 o 4)?
         1- 2:00 pm
         2- 4:00 pm
         3- 6:00 pm
         4- 8:00 pm
         `);
         
-        if (opcionHorario <= habitacionHorario.length) {
-            for (horario of opcionHorario){
-            console.log(`horario seleccionado : ${habitacionHorario[horario -1]}`);
-        }
+        horarioDisponible = opcionHorario <= habitacionHorario.length;
+
+        if (horarioDisponible){
+            console.log(`horario seleccionado : ${habitacionHorario[opcionHorario -1]}`);
         }else {
             alert(`${nombre}, el horario, seleccionado no esta habilitado`);
-        }
-        
-        
+        }        
     }
-    while(!horario);
-    return horario;
+
+    while(!horarioDisponible);
+    return horarioDisponible;
 }
 
 // precio del servico por cantidad de participantes
 
 const precioHabitacion = {
-    1 : 16000, 
+    1 : 32000, 
     2 : 32000, 
     3 : 42000,
     4 : 56000,
@@ -97,31 +98,31 @@ const precioHabitacion = {
 
 function precioParticipantes(nombre) {
 
-    let precios = false;
+    let grupoDisponible = false;
 
     do {
         let precioGrupo = prompt(`${nombre} selecciona la cantidad de participantes:  
-        1- Personas.
-        2- Personas. 
-        3- Personas. 
-        4- Personas.
-        5- Personas.
-        6- Personas. 
-        7- Personas.
+        1- Personas 32000 pcl.
+        2- Personas 32000 pcl. 
+        3- Personas 42000 pcl. 
+        4- Personas 56000 pcl.
+        5- Personas 60000 pcl.
+        6- Personas 72000 pcl.
+        7- Personas 84000 pcl.
         `);
 
-        precios = precioHabitacion.hasOwnProperty(precioGrupo);
+        grupoDisponible = precioHabitacion.hasOwnProperty(precioGrupo);
 
-        if(precios){
+        if(grupoDisponible){
             console.log(`cantidad de participantes : ${precioGrupo} Personas`);
-            console.log(`total a pagar : $ ${ precioHabitacion[precioGrupo]}`);
+            console.log(`total a pagar : ${ precioHabitacion[precioGrupo]} pcl`);
         } else {
             alert(`${nombre}, la habitacion no tiene capacidad para la cantidad señalada`);
         }  
-
     }
-    while(!precios)
-    return precios; 
+
+    while(!grupoDisponible)
+    return grupoDisponible; 
 }
 
 // funcion reserva para mostrar la seleccion de la reserva
@@ -132,13 +133,15 @@ function reserva() {
 
     if (edad >= 18){
         let room = rooms(nombre);
-        let horario = horarios(nombre, room);
-        let totalPrecio = precioParticipantes(nombre);
+        horarios(nombre, room);
+        precioParticipantes(nombre);
 
-        console.log("su reserva ha sido tomada exitosamente");  
+        alert(`${nombre}, su reserva ha sido tomada exitosamente`); 
+
     } else {
-        console.log(`lo siento ${nombre}, este juego es para mayores de edad`);
+        alert(`lo siento ${nombre}, este juego es para mayores de edad`);
         return;
     }
 }
+
 reserva();
