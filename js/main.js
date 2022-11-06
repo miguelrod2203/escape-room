@@ -1,9 +1,31 @@
-alert("Bienvenido a Esc-Room, podras salir a tiempo?");
+console.log ("Bienvenido a Esc-Room, podras salir a tiempo?");
 
-const precio12 = 16;
-const precio34 = 14;
-const precio56 = 12;
+// mis servicios de entretencion
 
+class Habitacion {
+    constructor (tematica, dificultad, duracion, descripcion ) {
+        this.tematica = tematica;
+        this.dificultad = dificultad;
+        this.duracion = duracion;
+        this.descripcion = descripcion;
+    }
+}
+
+const habitacion1 = new Habitacion ("Bajo presion", "8/10", "60 min", "Un espia aleman y un submarino con poco oxigeno... puedes escapar para contarlo?");
+const habitacion2 = new Habitacion ("La cabaña embrujada", "9/10", "60 min", "Unas vacaciones de infarto, alquilaste una cabaña, con tus amigos y maldicion incluida... ¿podran volver a tener paz?");
+const habitacion3 = new Habitacion ("El minero", "9/10", "60 min", "Atrapado al fondo de una mina... ¿puedes encontrar la forma de escapar?");
+const habitacion4 = new Habitacion ("El tren", "7/10", "60 min", "Un crimen y seis sospechosos a bordo... ¿puedes identificar al culpable antes de llegar a la estacion");
+const habitacion5 = new Habitacion ("Antidoto", "8/10", "60 min", "Un virus mortal contamina todo el laboratorio... ¿puedes encontrar el antídoto y escapar?");
+const habitacion6 = new Habitacion ("Alquimago", "10/10", "60 min", "El necesita un poco de tu magia y un sacrificio puede ser necesario... ¿quien del equipo sera?");
+
+const todas_habitaciones = {
+    1:habitacion1,
+    2:habitacion2,
+    3:habitacion3,
+    4:habitacion4,
+    5:habitacion5,
+    6:habitacion6,
+};
 
 function rooms(nombre){
     
@@ -11,32 +33,29 @@ function rooms(nombre){
 
     do {
         let opcionRoom = prompt(`${nombre} selecciona una de nuestras salas: 
-        1- El tren. 
-        2- El minero. 
-        3- El avion. 
-        4- La casa embujada. 
-        `).toLowerCase();
+        1- Bajo presion. 
+        2- La cabaña embrujada. 
+        3- El minero. 
+        4- El tren.
+        5- Antidoto.
+        6- Alquimago. 
+        `);
 
-        if(opcionRoom == 1 || opcionRoom == "el tren" ){
-            room = 'el tren';
-        }
-        else if(opcionRoom == 2 || opcionRoom == "el minero"){
-            room = 'el minero';
-        } 
-        else if(opcionRoom == 3 || opcionRoom == "el avion"){
-            room = 'el avion';
-        }
-        else if(opcionRoom == 4 || opcionRoom == "la casa embrujada"){
-            room = 'la casa embrujada';
+        if(opcionRoom in todas_habitaciones){
+            room = todas_habitaciones.hasOwnProperty(opcionRoom);
+            console.log(opcionRoom = todas_habitaciones[opcionRoom]);
         } else {
             alert(`${nombre}, la habitacion seleccionada no esta habilitada`);
         }  
 
     }
     while(!room)
-    return room;
-
+    return room; 
 }
+
+// horarios de mi servicio de entretencion
+
+const habitacionHorario = ["2:00 Pm", "4:00 Pm", "6:00 Pm", "8:00 Pm"];
 
 function horarios(nombre, room){
     let horario = false;
@@ -44,68 +63,68 @@ function horarios(nombre, room){
     do {
         let opcionHorario = prompt(`${nombre} usted ha elegido la habitacion ${room},
         ¿en que horario deseas intentarlo ( 1, 2, 3 o 4)?
-        Recuerda llegar 15 min antes con tu equipo.
         1- 2:00 pm
         2- 4:00 pm
         3- 6:00 pm
         4- 8:00 pm
         `);
-  
-        if (opcionHorario == 1){
-            horario = '2:00pm';
+        
+        if (opcionHorario <= habitacionHorario.length) {
+            for (horario of opcionHorario){
+            console.log(`horario seleccionado : ${habitacionHorario[horario -1]}`);
         }
-        else if (opcionHorario == 2){
-            horario = '4:00pm';
-        }
-        else if (opcionHorario == 3){
-            horario = '6:00pm';
-        }
-        else if (opcionHorario == 4){
-            horario = '8:00pm';
-        } else {
+        }else {
             alert(`${nombre}, el horario, seleccionado no esta habilitado`);
-        }   
+        }
+        
         
     }
     while(!horario);
     return horario;
 }
 
-function participantes(nombre){
-    let cantidadParticipantes = false;
+// precio del servico por cantidad de participantes
+
+const precioHabitacion = {
+    1 : 16000, 
+    2 : 32000, 
+    3 : 42000,
+    4 : 56000,
+    5 : 60000,
+    6 : 72000,
+    7 : 84000,
+};
+
+function precioParticipantes(nombre) {
+
+    let precios = false;
 
     do {
-        let cantidadParticipantes =  prompt(`${nombre} ahora por favor indicame cuantos participantes son?
-        1 a 2 personas pagan 16 $ c/u
-        3 a 4 personas pagan 14 $ c/u
-        5 a 6 personas pagan 12 $ c/u               
+        let precioGrupo = prompt(`${nombre} selecciona la cantidad de participantes:  
+        1- Personas.
+        2- Personas. 
+        3- Personas. 
+        4- Personas.
+        5- Personas.
+        6- Personas. 
+        7- Personas.
         `);
-     
-        if (cantidadParticipantes >= 1 && cantidadParticipantes <= 6){
-            return cantidadParticipantes;
-        
+
+        precios = precioHabitacion.hasOwnProperty(precioGrupo);
+
+        if(precios){
+            console.log(`cantidad de participantes : ${precioGrupo} Personas`);
+            console.log(`total a pagar : $ ${ precioHabitacion[precioGrupo]}`);
         } else {
-            alert(`${nombre}, ustedes son ${cantidadParticipantes} participantes, la cantidad maxima es de 6`);
-        }   
+            alert(`${nombre}, la habitacion no tiene capacidad para la cantidad señalada`);
+        }  
+
     }
-    while(!false);
-    return cantidadParticipantes;
+    while(!precios)
+    return precios; 
 }
 
-function precio(cantidadParticipantes) {
-    let precio = 0;
-    if (cantidadParticipantes == 1 || cantidadParticipantes <= 2){
-        precio = precio12 * cantidadParticipantes;
-    }
-    else if (cantidadParticipantes > 2 || cantidadParticipantes <= 4){
-        precio = precio34 * cantidadParticipantes;
-    }
-    else if (cantidadParticipantes > 4 || cantidadParticipantes <= 6){
-        precio = precio56 * cantidadParticipantes;
-    } 
-    return precio;
-}
-
+// funcion reserva para mostrar la seleccion de la reserva
 
 function reserva() {
     let nombre = prompt("A nombre de quien hacemos la reserva?");
@@ -114,22 +133,12 @@ function reserva() {
     if (edad >= 18){
         let room = rooms(nombre);
         let horario = horarios(nombre, room);
-        let cantidadParticipantes = participantes(nombre);
-        let totalPrecio = precio(cantidadParticipantes);
+        let totalPrecio = precioParticipantes(nombre);
 
-        alert("su reserva ha sido tomada exitosamente");
-
-        document.write(`El resumen de tu reserva es la siguiente: <br><br>
-                        Reserva a nombre de: ${nombre} <br>
-                        Habitacion seleccionada: ${room} <br>
-                        Horario seleccionado: ${horario} <br>
-                        Cantidad de participantes: ${cantidadParticipantes} <br>
-                        Total a pagar: ${totalPrecio} <br>
-                        `);   
+        console.log("su reserva ha sido tomada exitosamente");  
     } else {
-        alert(`lo siento ${nombre}, este juego es para mayores de edad`);
+        console.log(`lo siento ${nombre}, este juego es para mayores de edad`);
         return;
     }
- 
 }
 reserva();
