@@ -9,7 +9,9 @@ body {
     background-color: #1e1e1e;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
+body main {
+    padding-bottom: 40px;
+}
 /*  contenedor de grid */
 
 .contenedor {
@@ -35,7 +37,7 @@ body {
 }
 
 .contenedor .header .navbar-brand img{
-    width: 70px;
+    width: 60px;
 }
 
 .contenedor .header a {
@@ -134,9 +136,43 @@ body {
     top: 45%;
 }
 
+.contenedor .contenido .habitaciones .rooms .room-texto a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
 .contenedor .contenido .habitaciones .rooms img {
     width: 100%;
 }
+
+/*  seccion card- */
+
+.contenedor .contenido .contenido-card {
+    width: 100%;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.contenedor .contenido .contenido-card .imagen img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.6);
+}
+
+.contenedor .contenido .contenido-card .detalles {
+    padding-left: 20px;
+    text-align: justify;
+}
+
+.contenedor .contenido .contenido-card .detalles ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+
+
 
 /*  seccion precios */
 
@@ -286,9 +322,14 @@ body {
 
 
 
-/* medias Querys para pantalla de 768px*/
+/* medias Querys para pantalla de 767px*/
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+    .contenedor .contenido .contenido-card .detalles {
+        width: 100%;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
 
 }
 
