@@ -160,6 +160,10 @@ body main {
     box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.6);
 }
 
+.contenedor .contenido .contenido-card .detalles h2 {
+    text-align: center;
+}
+
 .contenedor .contenido .contenido-card .detalles {
     padding-left: 20px;
     text-align: justify;
