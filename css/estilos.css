@@ -246,7 +246,6 @@ body main {
     margin-bottom: 10px;
     height: 35px;
     padding-left: 10px;
-    border: 2px solid #fdb713;
     border-radius: 5px; 
 }
 
@@ -258,7 +257,6 @@ body main {
     resize: vertical;
     max-height: 250px;
     min-height: 150px;
-    border: 2px solid #fdb713;
     border-radius: 5px; 
 }
 
@@ -267,22 +265,67 @@ body main {
     margin-bottom: 10px;
     height: 35px;
     padding-left: 10px;
-    border: 2px solid #fdb713;
     border-radius: 5px; 
 }
 
-.contenedor .contenido .contacto .formulario-contacto textarea {
+
+/*  seccion formularios para reservas */
+
+.contenedor .contenido .formulario-habitacion{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.contenedor .contenido .formulario-habitacion input, select {
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.contenedor .contenido .guardar-reserva form {
+    display: flex;
+    justify-content: center;
+}
+.contenedor .contenido .guardar-reserva input {
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    height: 40px; 
+    margin-bottom: 30px;
+}
+
+.contenedor .contenido .protocolo-covid {
+    text-align: center;
+}
+.contenedor .contenido .protocolo-covid ul {
+    text-align: justify;
+    padding-bottom: 20px;
+    width: 90%;
+    padding-left: 10%;
+    font-size: 18px;
+}
+
+.contenedor .contenido .captacion-datos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.contenedor .contenido .captacion-datos .formulario-cliente {
+    width: 350px;
+    font-size: 18px;
+}
+
+.contenedor .contenido .captacion-datos .formulario-cliente input {
+    padding: 10px;
+    border-radius: 10px;
     width: 100%;
-    margin-bottom: 10px;
-    height: 35px;
-    padding-left: 10px;
-    border: 2px solid #fdb713;
-    border-radius: 5px; 
+    height: 40px;
+    margin-bottom: 20px;
 }
-.contenedor .contenido .contacto .formulario-contacto .enviar {
-    background-color: #fdb713;
-    color: #ffffff;
-}
+
 
 /*  seccion pie de pagina */
 
@@ -290,8 +333,7 @@ body main {
     grid-area: footer;
     border-top: 2px solid #fdb713;   
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-around; 
     padding-top: 10px;
 }
@@ -303,7 +345,7 @@ body main {
 }
 
 .contenedor .footer .redes-sociales svg {
-    color: #fdb713;
+    color: #fdb713; 
 }
 
 .contenedor .footer .redes-sociales , .inf-proyecto h4 {
