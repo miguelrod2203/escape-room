@@ -140,6 +140,9 @@ body main {
     color: #ffffff;
     text-decoration: none;
 }
+.contenedor .contenido .habitaciones .rooms .room-texto a:hover{
+    color: #fdb713;
+}
 
 .contenedor .contenido .habitaciones .rooms img {
     width: 100%;

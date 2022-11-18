@@ -1,31 +1,28 @@
 // datos de la habitacion
 
 class Habitacion {
-    constructor (id, titulo, tematica, dificultad, duracion, descripcion ) {
+    constructor (id, titulo, tematica, img, dificultad, duracion, numJugadores, descripcion ) {
         this.id = id;
         this.titulo = titulo;
         this.tematica = tematica;
+        this.img = img;
         this.dificultad = dificultad;
         this.duracion = duracion;
+        this.numJugadores = numJugadores;
         this.descripcion = descripcion;
     }
 }
 
-const habitacion1 = new Habitacion ("01", "Bajo presion", "Submarino", "8/10", "60 min", "Un espia aleman y un submarino con poco oxigeno... puedes escapar para contarlo?");
-const habitacion2 = new Habitacion ("02", "La cabaña embrujada", "Cabaña", "9/10", "60 min", "Unas vacaciones de infarto, alquilaste una cabaña, con tus amigos y maldicion incluida... ¿podran volver a tener paz?");
-const habitacion3 = new Habitacion ("03", "El minero", "Mina", "9/10", "60 min", "Atrapado al fondo de una mina... ¿puedes encontrar la forma de escapar?");
-const habitacion4 = new Habitacion ("04", "El tren", "Tren", "7/10", "60 min", "Un crimen y seis sospechosos a bordo... ¿puedes identificar al culpable antes de llegar a la estacion");
-const habitacion5 = new Habitacion ("05", "Antidoto", "Laboratorio", "8/10", "60 min", "Un virus mortal contamina todo el laboratorio... ¿puedes encontrar el antídoto y escapar?");
-const habitacion6 = new Habitacion ("06", "Alquimago", "Magia", "10/10", "60 min", "El necesita un poco de tu magia y un sacrificio puede ser necesario... ¿quien del equipo sera?");
+const habitacion1 = new Habitacion ("01", "Bajo presion", "Submarino", "/imagenes/room-submarino.jpg","8/10", "60 min", "2 a 7 Personas", "Un espia aleman y un submarino con poco oxigeno... puedes escapar para contarlo?");
+const habitacion2 = new Habitacion ("02", "La cabaña embrujada", "Cabaña", "/imagenes/room-casa-embrujada.png", "9/10", "60 min", "2 a 7 Personas", "Unas vacaciones de infarto, alquilaste una cabaña, con tus amigos y maldicion incluida... ¿podran volver a tener paz?");
+const habitacion3 = new Habitacion ("03", "El minero", "Mina", "/imagenes/room-minero.jpg", "9/10", "60 min", "2 a 7 Personas", "Atrapado al fondo de una mina... ¿puedes encontrar la forma de escapar?");
+const habitacion4 = new Habitacion ("04", "El tren", "Tren", "/imagenes/room-tren.jpg", "7/10", "60 min", "2 a 7 Personas", "Un crimen y seis sospechosos a bordo... ¿puedes identificar al culpable antes de llegar a la estacion");
+const habitacion5 = new Habitacion ("05", "Antidoto", "Laboratorio", "/imagenes/room-laboratorio.jpg", "8/10", "60 min", "2 a 7 Personas", "Un virus mortal contamina todo el laboratorio... ¿puedes encontrar el antídoto y escapar?");
+const habitacion6 = new Habitacion ("06", "Alquimago", "Magia", "/imagenes/room-alquimago.jpg", "10/10", "60 min", "2 a 7 Personas", "El necesita un poco de tu magia y un sacrificio puede ser necesario... ¿quien del equipo sera?");
+ 
+const todasHabitaciones = [habitacion1, habitacion2, habitacion3, habitacion4, habitacion5, habitacion6]
 
-const todas_habitaciones = {
-    1:habitacion1,
-    2:habitacion2,
-    3:habitacion3,
-    4:habitacion4,
-    5:habitacion5,
-    6:habitacion6,
-};
+
 
 // horarios de las habitaciones
 
