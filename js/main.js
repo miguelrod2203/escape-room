@@ -42,10 +42,58 @@ const renderizarNuestrasHabitaciones = ()=> {
     })
 }
 
+window.onload = () =>{
+    let links = document.querySelectorAll('.link')
 
-/*
+    let primero = links[0]
+    primero.addEventListener('click', () => {
+        scrollSuave('#primero', 500, 81)
+    })
 
-*/
+    let segundo = links[1]
+    segundo.addEventListener('click', () => {
+        scrollSuave('#segundo', 500, 81)
+    })
+
+    let tercero = links[2]
+    tercero.addEventListener('click', () => {
+        scrollSuave('#tercero', 500, 81)
+    })
+
+    let cuarto = links[3]
+    cuarto.addEventListener('click', () => {
+        scrollSuave('#cuarto', 500, 81)
+    })
+
+    let quinto = links[4]
+    quinto.addEventListener('click', () => {
+        scrollSuave('#quinto', 500, 81)
+    })
+}
+
+
+const scrollSuave =(objetivo, duracion, compensacion) => {
+    let elemObj = document.querySelector(objetivo)
+    let elemPos = elemObj.getBoundingClientRect().top - compensacion
+    let posInicial = window.pageYOffset
+    let tiempoInicial = null
+
+    const animacion = tiempoAhora => {
+        if (tiempoInicial === null) tiempoInicial = tiempoAhora
+        let tiempoPasado = tiempoAhora - tiempoInicial
+        let auxAnimacion = easeInOutQuard(tiempoPasado, posInicial, elemPos, duracion)
+        window.scrollTo(0, auxAnimacion)
+        if (tiempoPasado < duracion) requestAnimationFrame(animacion)
+    }
+    requestAnimationFrame(animacion)
+}
+
+const easeInOutQuard = (t, b, c, d) => {
+    t /= d/2;
+    if (t < 1) return c/2*t*t +b;
+    t--;
+    return -c/2 * (t*(t-2) - 1) + b;
+}
 
 
 // EventListener
