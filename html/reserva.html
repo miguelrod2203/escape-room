@@ -52,59 +52,56 @@
                 </div>
                 
                 <div class="formulario-habitacion">
-                    <div class="reserva-habitacion">
-                        <form  action="" method="get">
-                            <select name="seleccionar habitacion" id="#">
-                                <option value="" selected>Seleccionar habitacion</option>
-                                <option value="Bajo presion">Bajo presion</option>
-                                <option value="La cabaña embrujada">La cabaña embrujada</option>
-                                <option value="El minero">El minero</option>
-                                <option value="El tren">El tren</option>
-                                <option value="Antidoto">Antidoto</option>
-                                <option value="Alquimago">Alquimago</option>
-                            </select>
-                        </form>
-                    </div>
 
-                    <div class="reserva-fecha">
-                        <form action="" method="get">
-                            <input type="date" placeholder="dd/mm/aaaa" name="fecha" min="2022-11-12">
-                        </form>
-                    </div>
-
-                    <div class="reserva-hora">
-                        <form  action="" method="get">
-                            <select name="seleccionar horario" id="#">
-                                <option value="" selected>Seleccionar horario</option>
-                                <option value="2:00">2:00 Pm a 3:00 Pm</option>
-                                <option value="3:30">3:30 Pm a 4:30 Pm</option>
-                                <option value="5:00">5:00 Pm a 6:00 Pm</option>
-                                <option value="6:30">6:30 Pm a 7:30 Pm</option>
-                                <option value="8:00">8:00 Pm a 9:00 Pm</option>
-                            </select>
-                        </form>
-                    </div>
-
-                    <div class="reserva-personas">
-                        <form  action="" method="get">
-                            <select name="seleccionar participantes id="#">
-                                <option value="" selected>Seleccionar participantes</option>
-                                <option value="2 personas">2 Personas - 32.000 cpl</option>
-                                <option value="3 personas">3 Personas - 42.000 cpl</option>
-                                <option value="4 personas">4 Personas - 56.000 cpl</option>
-                                <option value="5 personas">5 Personas - 60.000 cpl</option>
-                                <option value="6 personas">6 Personas - 72.000 cpl</option>
-                                <option value="7 personas">7 Personas - 84.000 cpl</option>
-                            </select>
-                        </form> 
-                    </div>                    
-                </div>    
-                
-                <div class="guardar-reserva">    
                     <form action="" method="get">
-                        <input type="submit" value="RESERVAR" class="btn btn-outline-warning">
+                        <div class="row reserva-habitacion">
+                            <div class="col-md-3">
+                                <select name="seleccionar habitacion" id="habitacionId" onchange="selecHabitacion()">
+                                    <option value="" selected>Habitaciones</option>
+                                    <option value="Bajo presion">Bajo presion</option>
+                                    <option value="La cabaña embrujada">La cabaña embrujada</option>
+                                    <option value="El minero">El minero</option>
+                                    <option value="El tren">El tren</option>
+                                    <option value="Antidoto">Antidoto</option>
+                                    <option value="Alquimago">Alquimago</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="date" placeholder="dd/mm/aaaa" name="fecha" min="2022-11-12" id="fechaId">
+                            </div>
+
+                            <div class="col-md-3">
+                                <select name="seleccionar horario" id="horarioId" onchange="selecHorario()">
+                                    <option value="" selected>Horarios</option>
+                                    <option value="2:00 Pm">2:00 Pm a 3:00 Pm</option>
+                                    <option value="3:30 Pm">3:30 Pm a 4:30 Pm</option>
+                                    <option value="5:00 Pm">5:00 Pm a 6:00 Pm</option>
+                                    <option value="6:30 Pm">6:30 Pm a 7:30 Pm</option>
+                                    <option value="8:00 Pm">8:00 Pm a 9:00 Pm</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select name="seleccionar participantes" id="precioParticipantesId">
+                                    <option value="" selected>Participantes</option>
+                                    <option value="2 personas">2 Personas - 32.000 cpl</option>
+                                    <option value="3 personas">3 Personas - 42.000 cpl</option>
+                                    <option value="4 personas">4 Personas - 56.000 cpl</option>
+                                    <option value="5 personas">5 Personas - 60.000 cpl</option>
+                                    <option value="6 personas">6 Personas - 72.000 cpl</option>
+                                    <option value="7 personas">7 Personas - 84.000 cpl</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 align-self-center guardar-reserva">
+                                <input type="submit" value="RESERVAR" class="btn btn-outline-warning">
+                            </div>
+                        </div>
                     </form>
-                </div>
+                </div> 
                     
                 <div class="protocolo-covid">
                     <h3>PROTOCOLO COVID-19</h3>
@@ -121,12 +118,12 @@
                 <div class="captacion-datos">                       
                     <div class="inf-formulario-habitacion">                      
                         <ul><h3>Informacion del Servicio</h3> 
-                            <li>ESC-Room __________________</li>
-                            <li>Fecha _______________________</li>
-                            <li>Hora ________________________</li>
-                            <li>N° Paricipantes _____________</li>
-                            <li>Total _________________________</li>
-                            <li>Por participante ____________</li>
+                            <li>ESC-Room __________________ <span id="escElejido"></span></li>
+                            <li>Fecha _______________________<span id="fechaElejido"></span></li>
+                            <li>Hora ________________________<span id="horarioElejido"></span></li>
+                            <li>N° Paricipantes _____________<span id="participanteElejido"></span></li>
+                            <li>Total _________________________<span id="total"></span></li>
+                            <li>Por participante ____________<span id="porParticipante"></span></li>
                         </ul>
                     </div>
 
@@ -206,6 +203,6 @@
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         <script src='../js/data.js'></script>
-        <script src="../js/main.js"></script>
+        <script src="../js/reservacion.js"></script>
     </body>
 </html>

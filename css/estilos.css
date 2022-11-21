@@ -281,22 +281,20 @@ body main {
 .contenedor .contenido .formulario-habitacion{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .contenedor .contenido .formulario-habitacion input, select {
     border-radius: 10px;
-    width: 300px;
+    width: 100%;
     height: 40px;
     margin-bottom: 30px;
     padding-left: 10px;
 }
 
-.contenedor .contenido .guardar-reserva form {
-    display: flex;
-    justify-content: center;
-}
-.contenedor .contenido .guardar-reserva input {
+.contenedor .contenido .formulario-habitacion .guardar-reserva input {
     padding: 10px;
     border-radius: 10px;
     width: 300px;
