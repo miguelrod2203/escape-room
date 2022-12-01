@@ -110,7 +110,10 @@ body main {
     text-align: center;
     color: #ffffff;
 }
-
+.contenedor .contenido .queEs .pasos .texto-pasos {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
 /*  seccion habitaciones */
 
 .contenedor .contenido .habitaciones {
@@ -192,9 +195,16 @@ body main {
     gap: 20px;
 }
 
+.contenedor .contenido .precios img {
+    width: 150px;
+    border-radius: 50%;
+}
+.contenedor .contenido .precios .texto-precios {
+    padding-top: 50px;
+}
 .contenedor .contenido .pistas {
     text-align: center;
-    padding: 60px 10px 10px 10px;
+    padding: 30px 10px 10px 10px;
     font-size: 20px;
 }
 
@@ -297,7 +307,7 @@ body main {
 .contenedor .contenido .formulario-habitacion .guardar-reserva input {
     padding: 10px;
     border-radius: 10px;
-    width: 300px;
+    width: 100%;
     height: 40px; 
     margin-bottom: 30px;
 }
