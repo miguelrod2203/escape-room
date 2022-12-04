@@ -4,15 +4,26 @@
 // aqui vamos a declarar las variables constantes y de mas
 
 
-
 // Query de elementos
 // tods los llamados de los nodos
-
-const nuestrasHabitaciones = document.querySelector('#nuestrasHabitaciones')
 
 
 // Funciones
 // todas las funciones que necesito declarar
+
+
+// EventListener
+//
+
+
+// ejecuciones
+// los llamados a las funciones siempre al final del archivo
+
+//-----------------------------------------------------------------------
+
+// funcion para mostrar las habitaciones
+
+const nuestrasHabitaciones = document.querySelector('#nuestrasHabitaciones')
 
 const detallesHabitacion = (e) => {
     const idHabitacion = e.target.closest('.rooms').getAttribute('data-id')
@@ -21,7 +32,6 @@ const detallesHabitacion = (e) => {
     localStorage.setItem("habitacionElegida", idJason);
 
 }
-
 
 const renderizarNuestrasHabitaciones = ()=> {
     todasHabitaciones.forEach((habitacion) => {
@@ -41,6 +51,10 @@ const renderizarNuestrasHabitaciones = ()=> {
         verMas.addEventListener('click', detallesHabitacion)
     })
 }
+
+
+
+// funcion para usar scroll suave desde el header
 
 window.onload = () =>{
     let links = document.querySelectorAll('.link')
@@ -71,7 +85,6 @@ window.onload = () =>{
     })
 }
 
-
 const scrollSuave =(objetivo, duracion, compensacion) => {
     let elemObj = document.querySelector(objetivo)
     let elemPos = elemObj.getBoundingClientRect().top - compensacion
@@ -95,29 +108,13 @@ const easeInOutQuard = (t, b, c, d) => {
     return -c/2 * (t*(t-2) - 1) + b;
 }
 
-// EventListener
-// 
+ 
 
 
 
 
 
-// ejecuciones
-// los llamados a las funciones
+
 
 renderizarNuestrasHabitaciones();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

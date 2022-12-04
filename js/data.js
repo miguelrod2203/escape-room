@@ -23,7 +23,6 @@ const habitacion6 = new Habitacion ("06", "Alquimago", "Magia", "/imagenes/room-
 const todasHabitaciones = [habitacion1, habitacion2, habitacion3, habitacion4, habitacion5, habitacion6]
 
 
-
 // horarios de las habitaciones
 
 const habitacionHorario = {
