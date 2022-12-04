@@ -46,7 +46,7 @@ const precioPorPersona = {
     6 : 12000,
     7 : 12000,
 };
-
+// console.log(precioPorPersona[3])
 
 // precio del servicio por grupo
 
@@ -59,3 +59,4 @@ const precioPorGrupo = {
     6 : 72000,
     7 : 84000,
 };
+// console.log(precioPorGrupo[3])
