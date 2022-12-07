@@ -32,5 +32,37 @@ function selecParticipantes(){
 
 }
 
+function habilitarContinuar() {
+    habitacionId = document.getElementById("habitacionId").value;
+    fechaId = document.getElementById("fechaId").value;
+    horarioId = document.getElementById("horarioId").value;
+    precioParticipantesId = document.getElementById("precioParticipantesId").value;
 
+    val = 0;
 
+    if(habitacionId == ""){
+        val++;
+    }
+    if(fechaId == ""){
+        val++;
+    }
+    if(horarioId == ""){
+        val++;
+    }
+    if(precioParticipantesId == ""){
+        val++;
+    }
+    if(val == 0){
+        document.getElementById("continuar").disabled = false;
+    }else{
+        document.getElementById("continuar").disabled = true;
+    }
+}
+document.getElementById("habitacionId").addEventListener("change", habilitarContinuar);
+document.getElementById("fechaId").addEventListener("change", habilitarContinuar);
+document.getElementById("horarioId").addEventListener("change", habilitarContinuar);
+document.getElementById("precioParticipantesId").addEventListener("change", habilitarContinuar);
+
+document.getElementById("continuar").addEventListener("click", () =>{
+    alert("si se pudo");
+});
