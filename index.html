@@ -358,10 +358,10 @@
                     </div>
 
                     <div class="formulario-contacto">
-                        <form class="formGrupo" action="" method="get">
-                            <input type="text" placeholder="Ingrese su Nombre" name="nombre">
-                            <input type="email" placeholder="Ingrese su Correo" name="correo" id="#">
-                            <select name="seleccionar" id="#">
+                        <form class="formGrupo" action="" method="get" id="formId">
+                            <input type="text" placeholder="Ingrese su Nombre" name="nombre" id="nombreId">
+                            <input type="email" placeholder="Ingrese su Correo" name="correo" id="correoId">
+                            <select name="seleccionar" id="asuntoId">
                                 <option value="" selected>Seleccionar Asunto</option>
                                 <option value="reserva">Reserva</option>
                                 <option value="gif-card">Gif card</option>
@@ -370,8 +370,8 @@
                                 <option value="reclamos">Reclamos</option>
                                 <option value="otros">Otros</option>
                             </select>    
-                            <textarea name="servicio" id="" cols="40" rows="10"></textarea>
-                            <input type="submit" value="Enviar" class="btn btn-outline-warning">
+                            <textarea name="servicio" cols="40" rows="10" id="mensajeId"></textarea>
+                            <input type="submit"class="btn btn-outline-warning" id="enviarId">
                             
                         </form>
                     </div>

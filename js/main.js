@@ -108,6 +108,7 @@ const easeInOutQuard = (t, b, c, d) => {
     return -c/2 * (t*(t-2) - 1) + b;
 }
 
+// validacion de formulario de seccion de contacto
 
 
 
