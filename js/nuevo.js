@@ -20,5 +20,15 @@ const updateData = (e) => {
     numJugadores.textContent = habitacionElegida.numJugadores
     dificultad.textContent = habitacionElegida.dificultad
     descripcion.textContent = habitacionElegida.descripcion
+
+    let img = document.createElement("img");
+    img.src = habitacionElegida.img;
+    img.alt = habitacionElegida.titulo;
+    img.title = habitacionElegida.titulo;
+
+    document.querySelector('.imagen').appendChild(img)
+
 }
 updateData();
+
+
