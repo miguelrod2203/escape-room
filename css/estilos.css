@@ -285,6 +285,16 @@ body main {
     border-radius: 5px; 
 }
 
+
+.warnings {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #c8001c;
+    padding-top: 20px;
+}
+
+
 /*  seccion formularios para reservas */
 
 .contenedor .contenido .formulario-habitacion{
