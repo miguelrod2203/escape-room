@@ -1,3 +1,5 @@
+// funciones para  tomar los valores seleccionados en los inputs
+
 function selecHabitacion(){
     let habitacionId =document.getElementById('habitacionId');
     let habitacion = habitacionId.value;
@@ -31,6 +33,7 @@ function selecParticipantes(){
     document.getElementById('porParticipante').innerText = ` ${precioPorPersona[participantes]}`
 
 }
+// habilitamos el boton solo si selecciona una opcion en cada input
 
 function habilitarContinuar() {
     habitacionId = document.getElementById("habitacionId").value;
